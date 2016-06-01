@@ -1,6 +1,5 @@
 # folder
 .idea
-out\*
+out
 
 # class files
-*.class
