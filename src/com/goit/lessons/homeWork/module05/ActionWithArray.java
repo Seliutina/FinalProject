@@ -20,4 +20,33 @@ public class ActionWithArray {
         }
         System.out.println("Max value in the array is " + max);
     }
+    public static void shakerSort(int[] array){
+        int left = 0;
+        int right = array.length - 1;
+
+        do
+        {
+            for (int i = left; i < right; i++) {
+                if(array[i] > array[i+1]) {
+                    int tmp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = tmp;
+                }
+            }
+            right--;
+            for (int i = right; i > left ; i--) {
+                if(array[i] < array[i-1]) {
+                    int tmp = array[i];
+                    array[i] = array[i-1];
+                    array[i-1] = tmp;
+                }
+            }
+            left++;
+        } while (left <= right);
+
+        System.out.println("Sorted array is: ");
+
+        for (int i : array)
+            System.out.print(i + " ");
+    }
 }

@@ -7,7 +7,8 @@ public class Array {
     public static void main(String args[]) {
         ActionWithArray.minElement(fill());
         ActionWithArray.maxElement(fill());
-        
+        ActionWithArray.shakerSort(fill());
+
     }
 
     public static int[] fill() {
@@ -24,7 +25,6 @@ public class Array {
                 System.out.println("Input array size: ");
                 int size = scanner.nextInt();
                 int arrayK[] = new int[size];
-
                 for (int i = 0; i < arrayK.length; i++) {
                     System.out.println("Input array elements: ");
                     arrayK[i] = scanner.nextInt();
@@ -38,7 +38,6 @@ public class Array {
 
             case "A":
                 int[] arrayA = new int[10];
-
                 for (int i = 0; i < arrayA.length; i++) {
                     arrayA[i] = ((int) (Math.random() * 60) - 10);
                     System.out.print("  " + arrayA[i]);
@@ -47,9 +46,8 @@ public class Array {
                 break;
 
             default:
-                int[] arrayD = {2,5,6,-23,45,-67,12};
-
-                for(int i = 0; i < arrayD.length; i++){
+                int[] arrayD = {2, 5, 6, -23, 45, -67, 12};
+                for (int i = 0; i < arrayD.length; i++) {
                     System.out.print(" " + arrayD[i]);
                     a = arrayD;
                 }
