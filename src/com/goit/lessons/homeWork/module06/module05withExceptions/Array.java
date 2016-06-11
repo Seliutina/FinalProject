@@ -11,18 +11,18 @@ public class Array {
             ActionWithArray.maxElement(fill());
             ActionWithArray.shakerSort(fill());
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("[ERROR]: array lenght is 0, should be 1 or more, operation was interrupted");
+            System.err.println("[ERROR]: array lenght is 0, should be 1 or more, operation was interrupted");
 
         } catch (InputMismatchException e) {
-            System.out.println("[ERROR]: Array's size or elements should be integer, operation was interrupted");
+            System.err.println("[ERROR]: Array's size or elements should be integer, operation was interrupted");
 
         } catch (NegativeArraySizeException e) {
-            System.out.println("[ERROR]: Array's size must be positive value, operation was interrupted");
+            System.err.println("[ERROR]: Array's size must be positive value, operation was interrupted");
 
         }
     }
 
-    public static int[] fill() throws NegativeArraySizeException,InputMismatchException,
+    private static int[] fill() throws NegativeArraySizeException,InputMismatchException,
             ArrayIndexOutOfBoundsException{
         int[] a = {};
         Scanner input = new Scanner(System.in);
@@ -38,11 +38,11 @@ public class Array {
                 int size = scanner.nextInt();
                 int arrayK[] = new int[size];
 
-                for (int i = 0; i < arrayK.length; i++) {
+                for (int i : arrayK) {
                     System.out.println("Input array elements: ");
                     arrayK[i] = scanner.nextInt();
                 }
-                for (int i = 0; i < arrayK.length; i++) {
+                for (int i : arrayK) {
                     System.out.print("  " + arrayK[i]);
                     a = arrayK;
 
