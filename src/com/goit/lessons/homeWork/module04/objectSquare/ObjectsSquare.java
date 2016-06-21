@@ -5,9 +5,9 @@ package com.goit.lessons.homeWork.module04.objectSquare;
 public class ObjectsSquare {
 
     public static void main(String[] args) {
-        Triangle triangle = new Triangle();
-        Circle circle = new Circle();
-        Rectangle rectangle = new Rectangle();
+        Shape triangle = new Triangle();
+        Shape circle = new Circle();
+        Shape rectangle = new Rectangle();
 
         System.out.println("Triangle square is " + triangle.square(2,3));
         System.out.println("Circle square is " + circle.square(1));

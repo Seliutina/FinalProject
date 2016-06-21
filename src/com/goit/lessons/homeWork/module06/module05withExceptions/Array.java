@@ -11,7 +11,7 @@ public class Array {
             ActionWithArray.maxElement(fill());
             ActionWithArray.shakerSort(fill());
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.err.println("[ERROR]: array lenght is 0, should be 1 or more, operation was interrupted");
+            System.err.println("[ERROR]: Array length is 0, should be 1 or more, operation was interrupted");
 
         } catch (InputMismatchException e) {
             System.err.println("[ERROR]: Array's size or elements should be integer, operation was interrupted");
