@@ -1,7 +1,5 @@
 package com.goit.lessons.homeWork.additionalTasks.collectionUsage;
 
-import sun.rmi.runtime.Log;
-
 import java.util.ArrayList;
 
 public class FindPairsCollection implements AutoCloseable {
