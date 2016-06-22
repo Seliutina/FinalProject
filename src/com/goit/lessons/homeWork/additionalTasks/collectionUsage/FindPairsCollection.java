@@ -32,12 +32,14 @@ public class FindPairsCollection implements AutoCloseable {
         ArrayList<Integer> arrayList= new ArrayList<>();
 
 // Fill ArrayList in cycle
+
         /*for(int i = 0; i < 30; i++){
             arrayList.add(i);
             System.out.print(arrayList.get(i) + " ");
         }*/
 
 //Fill ArrayList
+
         arrayList.add(5);
         arrayList.add(1);
         arrayList.add(3);
