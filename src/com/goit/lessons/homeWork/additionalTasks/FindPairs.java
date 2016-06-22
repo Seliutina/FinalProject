@@ -15,7 +15,7 @@ public class FindPairs {
     }
 
     public int[] array(){
-        int[] array = {5, 6, 12, 78, -1};
+        int[] array = {5, 6, 12, 78, -2};
         for (int i = 0; i < array.length; i++) {
             System.out.print("  " + array[i]);
         }
