@@ -1,5 +1,7 @@
 package com.goit.lessons.homeWork.additionalTasks.collectionUsage;
 
+import sun.rmi.runtime.Log;
+
 import java.util.ArrayList;
 
 public class FindPairsCollection implements AutoCloseable {
@@ -22,7 +24,7 @@ public class FindPairsCollection implements AutoCloseable {
 
         }
         if (counter == 0){
-            System.out.println("ArrayList does not contain elements which sum is  " + target);
+            System.out.println("ArrayList does not contain a couple of elements which sum is  " + target);
         }
 
     }
@@ -38,13 +40,13 @@ public class FindPairsCollection implements AutoCloseable {
         }*/
 
 //Fill ArrayList
-        arrayList.add(2);
+        arrayList.add(5);
         arrayList.add(1);
         arrayList.add(3);
         arrayList.add(2);
 
         if(arrayList.size() == 0 | arrayList.size() == 1)
-        {throw new ArrayIndexOutOfBoundsException("ArrayList size 0 or 1, should be more than 1");}
+        {throw new ArrayListSizeException();}
 
         for(int i = 0; i < arrayList.size(); i++){
 
@@ -57,12 +59,12 @@ public class FindPairsCollection implements AutoCloseable {
     public static void main (String args[]) throws Exception{
 
         try(
-        FindPairsCollection findPairsCollection = new FindPairsCollection())
-        {findPairsCollection.findPairs(findPairsCollection.arrayFill(), 13);}
-        catch (NullPointerException e){
+                FindPairsCollection findPairsCollection = new FindPairsCollection())
+        {findPairsCollection.findPairs(findPairsCollection.arrayFill(), 5);
+        } catch (NullPointerException e){
             System.err.println("[ERROR]: Some element in the ArrayList is null");
-        } catch (ArrayIndexOutOfBoundsException e){
-            System.err.println("[ERROR]: ArrayList's size is 0 or 1, goal can't be reached");
+        } catch (ArrayListSizeException e){
+            System.err.println("[ERROR]: ArrayList's size is 0 or 1");
         }
     }
 }
