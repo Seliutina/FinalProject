@@ -15,7 +15,7 @@ public class FindPairs {
     }
 
     public int[] array(){
-        int[] array = {1, 12, 3, 4, -5, 6};
+        int[] array = {5, 6, 12, 78, -1};
         for (int i = 0; i < array.length; i++) {
             System.out.print("  " + array[i]);
         }
@@ -27,6 +27,6 @@ public class FindPairs {
 
         FindPairs findPairs = new FindPairs();
 
-        findPairs.findPairs(findPairs.array(), 7);
+        findPairs.findPairs(findPairs.array(), 11);
     }
 }
