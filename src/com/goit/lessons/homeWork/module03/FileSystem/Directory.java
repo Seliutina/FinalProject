@@ -2,9 +2,6 @@ package com.goit.lessons.homeWork.module03.FileSystem;
 
 import java.util.List;
 
-/**
- * Created by Оксана on 30.05.2016.
- */
 public class Directory {
     private List<AudioFile> audioFileFiles;
     private List<ImageFile> imageFiles;
