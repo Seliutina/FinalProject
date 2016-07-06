@@ -1,10 +1,10 @@
-package com.goit.examplesFromShildt.strings;
+package com.goit.examplesFromShildt.strings.stringConstructors;
 /*page 471
 String (Ьуtе symbols[] )
 String (Ьyte symbols[] , int initial_index , int symbols_quantity)
 */
 
-public class SubStringCons {
+public class ByteConstructor {
     public static void main(String[] args) {
         byte ascii[] = {66, 65, 67};
         String str = new String(ascii);
