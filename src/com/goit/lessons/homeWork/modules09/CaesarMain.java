@@ -10,8 +10,9 @@ public class CaesarMain {
 
         arrayList.add("AudioFile, Yesterday, .mp3");
         arrayList.add("AudioFile, Submarine, .mp3");
-        arrayList.add("ImageFile, SomeSong, .png");
+        arrayList.add("ImageFile, SomeImage, .png");
         arrayList.add("TextFile, SomeText, .txt");
+        arrayList.add("AudioFile, SomeSong, .mp3");
 
         String[] array = new String[arrayList.size()];
 
