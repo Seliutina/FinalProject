@@ -13,6 +13,7 @@ public class FileWrite {
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("tmp.txt")));
             out.println("Hello, file!!!! I'm here!!!");
             out.println("Second line in the text file :)");
+            out.println();
             out.println(":))))))))))))))))))))))))))))");
             out.close();
         }catch (IOException e){

@@ -19,12 +19,12 @@ public class FileCreation {
                     String toWrite = array[i];
                     out.println(toWrite);
                 }
-                out.println("\r\n");
+                out.println();
                 for (int i = 0; i < array.length; i++) {
                     String toWrite = stringsEncrypt.encrypt(array[i]).toString();
                     out.println(toWrite);
                 }
-                out.println("\r\n");
+                out.println();
                 for (int i = 0; i < array.length; i++) {
                     String toWrite = stringsDecrypt.decrypt(stringsEncrypt.encrypt(array[i])).toString();
                     out.println(toWrite);
