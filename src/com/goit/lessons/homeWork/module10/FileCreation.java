@@ -14,23 +14,24 @@ public class FileCreation {
             String[] array = caesarMain.FillList();
 
             try{
-                PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\ere\\tmp.txt")));
+                PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("tmp.txt")));
                 for (int i = 0; i < array.length; i++) {
                     String toWrite = array[i];
                     out.println(toWrite);
                 }
                 out.println();
                 for (int i = 0; i < array.length; i++) {
-                    String toWrite = stringsEncrypt.encrypt(array[i]).toString();
+                    StringBuilder toWrite = stringsEncrypt.encrypt(array[i]);
                     out.println(toWrite);
                 }
                 out.println();
                 for (int i = 0; i < array.length; i++) {
-                    String toWrite = stringsDecrypt.decrypt(stringsEncrypt.encrypt(array[i])).toString();
+                    StringBuilder toWrite = stringsDecrypt.decrypt(stringsEncrypt.encrypt(array[i]));
                     out.println(toWrite);
                 }
                 out.close();
             }catch (IOException e){
+                e.printStackTrace();
                 System.err.println("[ERROR]: Unfortunately IOException is occurred :( ");
             }
         }
