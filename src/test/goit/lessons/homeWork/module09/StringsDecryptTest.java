@@ -14,5 +14,4 @@ public class StringsDecryptTest {
 
         assertEquals("tesУКt, .34", stringsDecrypt.decrypt(stringBuilder).toString());
     }
-
 }
