@@ -8,7 +8,7 @@ public class CaesarMain {
     public String[] FillList(){
         ArrayList<String> arrayList = new ArrayList<>();
 
-        arrayList.add("AudioFile, Yesterday, .mp3");
+        arrayList.add("AudioЩFile, Yesterday, .mp3");
         arrayList.add("AudioFile, Submarine, .mp3");
         arrayList.add("ImageFile, SomeImage, .png");
         arrayList.add("TextFile, SomeText, .txt");
