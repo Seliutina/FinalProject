@@ -61,11 +61,11 @@ public class ArrayAgain {
                 break;
 
             default:
-                System.out.println("You does not select fill array from keyboard(K) or fill Array automatically(A), " +
+                System.err.println("[WARNING]: You does not select to fill array from keyboard(K) or to fill Array automatically(A), " +
                         "so Default array is used");
                 int[] defaultArray = new int[10];
                 for (int i = 0; i < defaultArray.length; i++) {
-                    defaultArray[i] = ((int) (Math.random() * 60) - 10);
+                    defaultArray[i] = ((int) (Math.random() * 80) - 10);
                     System.out.print("  " + defaultArray[i]);
                     a = defaultArray;
                 }
