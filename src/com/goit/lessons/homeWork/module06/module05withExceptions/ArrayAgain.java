@@ -30,11 +30,6 @@ public class ArrayAgain {
                     if (size == 0) {
                         throw new ArrayIndexOutOfBoundsException("[ERROR] ");
                     }
-                    if (size == 4) {
-                        {
-                            throw new NoSuchElementException("[ERROR] ");
-                        }
-                    }
                     int arrayK[] = new int[size];
 
                     for (int i : arrayK) {
