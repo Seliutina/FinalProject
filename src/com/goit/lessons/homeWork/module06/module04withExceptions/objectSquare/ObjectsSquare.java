@@ -7,7 +7,7 @@ public class ObjectsSquare {
 
         try(
                 Triangle triangle = new Triangle();
-                ) {triangle.square(8,7);}
+                ) {triangle.square(-8,7);}
         catch (IllegalArgumentException e)
         {System.err.println("[ERROR]: Some triangle side value is negative");}
 
@@ -19,7 +19,7 @@ public class ObjectsSquare {
 
         try(
                 Circle circle = new Circle();
-                ){circle.square(-8);}
+                ){circle.square(8);}
         catch (IllegalArgumentException e)
         {System.err.println("[ERROR]: Circle radius is negative");}
     }
