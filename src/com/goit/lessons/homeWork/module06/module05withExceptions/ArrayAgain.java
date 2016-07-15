@@ -1,7 +1,6 @@
 package com.goit.lessons.homeWork.module06.module05withExceptions;
 
 import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ArrayAgain {
