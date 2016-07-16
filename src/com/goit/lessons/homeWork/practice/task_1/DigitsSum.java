@@ -1,5 +1,7 @@
 package com.goit.lessons.homeWork.practice.task_1;
 
+import java.util.Scanner;
+
 public class DigitsSum {
     public void digitsSum (int k){
         StringBuilder stringBuilder = new StringBuilder(0);
@@ -14,6 +16,7 @@ public class DigitsSum {
 
     public static void main(String[] args) {
         DigitsSum digitsSum = new DigitsSum();
-        digitsSum.digitsSum(235384295);
+        digitsSum.digitsSum(123);
     }
 }
+

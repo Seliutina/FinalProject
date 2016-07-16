@@ -1,0 +1,21 @@
+package com.goit.lessons.homeWork.practice.task_1;
+
+public class OddNumber {
+    public int oddNumber (int[] A){
+        int k = 0;
+        int counter = 0;
+        for (int i = 0; i < A.length; i++){
+            if(A[i]%2 != 0){
+                k = i; counter += counter; break;
+            }
+        }
+        if (counter != 0) return k;
+        else return -1;
+    }
+
+    public static void main(String[] args) {
+        OddNumber oddNumber = new OddNumber();
+        int[] A = {2,4,6,8,4,2};
+        System.out.println("The first odd number index in the array is " + oddNumber.oddNumber(A));
+    }
+}
