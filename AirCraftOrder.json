@@ -1,0 +1,35 @@
+[{
+  "vendorName": "Boeing",
+  "order": [{
+    "aircraftName": "Boeing 777",
+    "aircraftType": "Plane",
+    "quantity": 1},
+
+    {"aircraftName": "Boeing 737",
+    "aircraftType": "Plane",
+    "quantity": 1},
+
+    {"aircraftName": "Bell 47",
+      "aircraftType": "Helicopter",
+    "quantity": 1},
+
+    {"aircraftName": "08 ATH",
+    "aircraftType": "Aerostat",
+    "quantity": 1},
+
+    {"aircraftName": "07 ATC",
+    "aircraftType": "Aerostat",
+    "quantity": 1}
+  ]
+}, {
+  "vendorName": "Sikorsky",
+  "order": [{
+    "aircraftName": "Sikorsky R-6",
+    "aircraftType": "Helicopter",
+    "quantity": 1},
+
+    {"aircraftName": "Sikorsky S-44",
+    "aircraftType": "Plane",
+    "quantity": 1
+  }]
+}]
