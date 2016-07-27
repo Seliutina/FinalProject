@@ -2,14 +2,13 @@ package com.goit.finalProject;
 
 import com.goit.finalProject.parser.Parser;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Fleet {
-    public static List<Plane>  createAllBoeingPlanOrder() throws Exception{
-        BoeingAircraftCreationFactory boeingAircraftCreationFactory =
-                new BoeingAircraftCreationFactory();
+    private BoeingAircraftCreationFactory boeingAircraftCreationFactory;
+    private SikorskyAircraftCreationFactory sikorskyAircraftCreationFactory;
+    public  List<Plane>  createAllBoeingPlanOrder() throws Exception{
+        boeingAircraftCreationFactory = new BoeingAircraftCreationFactory();
         List<Plane> planeList = new ArrayList<>();
         Parser parserAgain = new Parser();
 
@@ -20,10 +19,9 @@ public class Fleet {
         }//create List<List<Plane>> list of all boeing plan in the order
         return planeList;
     }
-    public static List<Helicopter> createAllBoeingHelicopterOrder() throws Exception{
+    public  List<Helicopter> createAllBoeingHelicopterOrder() throws Exception{
         Parser parserAgain = new Parser();
-        BoeingAircraftCreationFactory boeingAircraftCreationFactory =
-                new BoeingAircraftCreationFactory();
+        boeingAircraftCreationFactory = new BoeingAircraftCreationFactory();
         List<Helicopter> helicopterList = new ArrayList<>();
 
         for (Object o : parserAgain.boeingHelicopterOrderPrepare().entrySet()) {
@@ -33,10 +31,9 @@ public class Fleet {
         }
         return helicopterList;
     }
-    public static List<Aerostat> createAllBoeingAerostat() throws Exception{
+    public  List<Aerostat> createAllBoeingAerostat() throws Exception{
         Parser parserAgain = new Parser();
-        BoeingAircraftCreationFactory boeingAircraftCreationFactory =
-                new BoeingAircraftCreationFactory();
+        boeingAircraftCreationFactory = new BoeingAircraftCreationFactory();
         List<Aerostat> aerostatList = new ArrayList<>();
 
         for (Object o : parserAgain.boeingAerostatOrderPrepare().entrySet()) {
@@ -46,9 +43,9 @@ public class Fleet {
         }
         return aerostatList;
     }
-    public static List<Plane> createAllSikorskyPlanOrder() throws Exception{
+    public  List<Plane> createAllSikorskyPlanOrder() throws Exception{
         Parser parserAgain = new Parser();
-        SikorskyAircraftCreationFactory sikorskyAircraftCreationFactory =
+        sikorskyAircraftCreationFactory =
                 new SikorskyAircraftCreationFactory();
         List<Plane> planeList = new ArrayList<>();
 
@@ -59,10 +56,9 @@ public class Fleet {
         }
         return planeList;
     }
-    public static List<Helicopter> createAllSikorskyHelicopterOrder() throws Exception{
+    public  List<Helicopter> createAllSikorskyHelicopterOrder() throws Exception{
         Parser parserAgain = new Parser();
-        SikorskyAircraftCreationFactory sikorskyAircraftCreationFactory =
-                new SikorskyAircraftCreationFactory();
+        sikorskyAircraftCreationFactory = new SikorskyAircraftCreationFactory();
         List<Helicopter> helicopterList= new ArrayList<>();
 
         for (Object o : parserAgain.sikorskyHelicopterOrderPrepare().entrySet()) {
@@ -73,7 +69,7 @@ public class Fleet {
         return helicopterList;
     }
 
-    public static List<Aircraft> commonFleet() throws Exception{
+    public  List<Aircraft> commonFleet() throws Exception{
         List<Plane> planeList, planeListSikorsky;
         List<Helicopter> boeingHelicopterList, sikorskyHelicopterList;
         List<Aerostat> boeingAerostatList;
@@ -90,23 +86,44 @@ public class Fleet {
         aircraftList.addAll(boeingHelicopterList);
         aircraftList.addAll(boeingAerostatList);
         aircraftList.addAll(sikorskyHelicopterList);
-        System.out.println("PLANES, AEROSTATS AND HELICOPTERS FROM SIKORSKY AND BOEING VENDORS ARE: ");
-        for (Aircraft anAircraftList : aircraftList) {
-            System.out.println("AIRCRAFT TYPE " + anAircraftList.getAircraftType() + " "
-                    + "NAME " + anAircraftList.getAircraftName() + " "
-                    + "VENDOR " + anAircraftList.getVendorName());
-        }
         return aircraftList;
     }
-  ///тут еще не работает правильно ничего
-    public static void main(String[] args) throws Exception{
-        List<Aircraft> aircraftList = commonFleet();
-        aircraftList.addAll(commonFleet());
-        for (Aircraft anAircraftList : aircraftList) {
-            System.out.println("AIRCRAFT TYPE " + anAircraftList.getAircraftType() + " "
-                    + "NAME " + anAircraftList.getAircraftName() + " "
-                    + "VENDOR " + anAircraftList.getVendorName());
+    public  List<Plane> allPlanes() throws Exception{
+        List<Plane> aircraftList = new ArrayList<>();
+        aircraftList.addAll(createAllBoeingPlanOrder());
+        aircraftList.addAll(createAllSikorskyPlanOrder());
+        return aircraftList;
+    }
+    public  List<Plane> planesSortedByFlyingRange() throws Exception{
+        List<Plane> aircraftList = allPlanes();
+        Collections.sort(aircraftList, new FleetComparator());
+        return aircraftList;
+    }
+
+    public  Integer summarySeatingCapacity() throws Exception{
+        int summarySeatingCapacity = 0;
+        for (int i = 0; i < commonFleet().size(); i++){
+            summarySeatingCapacity += commonFleet().get(i).getSeatingCapacity();
         }
-        System.out.println(aircraftList.size());
+        return summarySeatingCapacity;
+    }
+
+    public  Integer summaryWeightLift() throws Exception{
+        int summaryWeightLift = 0;
+        for (int i = 0; i < commonFleet().size(); i++){
+            summaryWeightLift += commonFleet().get(i).getWeightLift();
+        }
+        return summaryWeightLift;
+    }
+
+    public  List<Plane> findPlaneByFuelEndurance(int a, int b) throws Exception{
+        List<Plane> planeList = allPlanes();
+        List<Plane> planes = new ArrayList<>();
+        for (Plane aPlaneList : planeList) {
+            if (aPlaneList.getFuelEndurance() > a && aPlaneList.getFuelEndurance() < b) {
+                planes.add(aPlaneList);
+            }
+        }
+        return planes;
     }
 }
