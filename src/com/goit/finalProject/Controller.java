@@ -26,9 +26,9 @@ public class Controller {
         }
         toWrite.append("\n" + "FLEET'S SUMMARY SEATING CAPACITY:" + "\n" +
                 fleet.summarySeatingCapacity() + "\n");
-        toWrite.append("FLEET'S SUMMARY WEIGHT LIFT:" + "\n" +
+        toWrite.append("\n" + "FLEET'S SUMMARY WEIGHT LIFT:" + "\n" +
                 fleet.summaryWeightLift() + "\n");
-        toWrite.append("PLANES WITH REQUIRED FUEL ENDURANCE:" + "\n");
+        toWrite.append("\n" + "PLANES WITH REQUIRED FUEL ENDURANCE:" + "\n");
         for (int i = 0; i < fleet.findPlaneByFuelEndurance(200, 500).size(); i++){
             toWrite.append("Name" + "\t" +
                     (fleet.findPlaneByFuelEndurance(200, 500)).get(i).getAircraftName() + "\t" +
