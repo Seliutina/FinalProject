@@ -30,7 +30,6 @@ public class Boeing777Plane implements Plane {
                     }
                     if (entry.getKey().toString().equalsIgnoreCase("planeName")) {
                         PlaneName = entry.getValue().toString();
-                        System.out.println(PlaneName);
                     }
                     if (entry.getKey().toString().equalsIgnoreCase("planeType")){
                         PlaneType = entry.getValue().toString();
