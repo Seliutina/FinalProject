@@ -1,30 +1,77 @@
 package com.goit.finalProject.aircraftsForBoeingFactory;
 
 import com.goit.finalProject.Helicopter;
+import com.goit.finalProject.parser.InitialValuesParser;
+
+import java.util.Map;
 
 public class Bell47 implements Helicopter {
+    private static String AircraftName;
+    private static String VendorName;
+    private static String AircraftType;
+    private static Integer FuelEndurance;
+    private static Integer LengthMorphingHelicopterRotor;
+    private static Integer FlyingRange;
+    private static Integer SeatingCapacity;
+    private static Integer WeightLift;
+
+    static {
+
+        try {
+            InitialValuesParser initialValuesParser = new InitialValuesParser();
+            for (Object o : initialValuesParser.boeingBell47InitialValues().entrySet()) {
+                Map.Entry entry = (Map.Entry) o;
+                if (entry.getKey().toString().equalsIgnoreCase("aircraftType")){
+                    AircraftType = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("vendorName")){
+                    VendorName = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("helicopterName")) {
+                    AircraftName = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("LengthMorphingHelicopterRotor")){
+                    LengthMorphingHelicopterRotor = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("FuelEndurance")){
+                    FuelEndurance = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("SeatingCapacity")){
+                    SeatingCapacity = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("FlyingRange")){
+                    FlyingRange = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("WeightLift")){
+                    WeightLift = Integer.parseInt(entry.getValue().toString());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[ERROR]:");
+        }
+    }
     public String getAircraftName(){
-        return "Bell 47";
+        return AircraftName;
     };
     public String getVendorName(){
-        return "Boeing";
+        return VendorName;
     };
     public Integer getFuelEndurance(){
-        return 100;
+        return FuelEndurance;
     };
     public Integer getLengthMorphingHelicopterRotor(){
-        return 21;
+        return LengthMorphingHelicopterRotor;
     };
     public String getAircraftType(){
-        return "Helicopter";
+        return AircraftType;
     };
-    public Integer  getFlyingRange(){
-        return 500;
+    public Integer getFlyingRange(){
+        return FlyingRange;
     };
     public Integer getSeatingCapacity(){
-        return 3;
+        return SeatingCapacity;
     };
     public Integer getWeightLift(){
-        return 500;
+        return WeightLift;
     };
 }

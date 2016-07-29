@@ -29,8 +29,8 @@ public class Array {
                     System.out.println("Input array elements: ");
                     arrayK[i] = scanner.nextInt();
                 }
-                for (int i = 0; i < arrayK.length; i++) {
-                    System.out.print("  " + arrayK[i]);
+                for (int anArrayK : arrayK) {
+                    System.out.print("  " + anArrayK);
                     a = arrayK;
 
                 }
@@ -47,8 +47,8 @@ public class Array {
 
             default:
                 int[] arrayD = {2, 5, 6, -23, 45, -67, 12};
-                for (int i = 0; i < arrayD.length; i++) {
-                    System.out.print(" " + arrayD[i]);
+                for (int anArrayD : arrayD) {
+                    System.out.print(" " + anArrayD);
                     a = arrayD;
                 }
                 break;

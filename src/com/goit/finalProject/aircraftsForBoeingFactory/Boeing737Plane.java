@@ -1,30 +1,78 @@
 package com.goit.finalProject.aircraftsForBoeingFactory;
 
 import com.goit.finalProject.Plane;
+import com.goit.finalProject.parser.InitialValuesParser;
+
+import java.util.Map;
 
 public class Boeing737Plane implements Plane {
-   public String getAircraftType(){
-       return "Plane";
-   };
+    private static String AircraftType;
+    private static String VendorName;
+    private static String PlaneName;
+    private static String PlaneType;
+    private static Integer SeatingCapacity;
+    private static Integer FuelEndurance;
+    private static Integer FlyingRange;
+    private static Integer WeightLift;
+
+    static {
+
+        try {
+            InitialValuesParser initialValuesParser = new InitialValuesParser();
+            for (Object o : initialValuesParser.boeing737InitialValues().entrySet()) {
+                Map.Entry entry = (Map.Entry) o;
+                if (entry.getKey().toString().equalsIgnoreCase("aircraftType")){
+                    AircraftType = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("vendorName")){
+                    VendorName = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("planeName")) {
+                    PlaneName = entry.getValue().toString();
+                    System.out.println(PlaneName);
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("planeType")){
+                    PlaneType = entry.getValue().toString();
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("FuelEndurance")){
+                    FuelEndurance = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("SeatingCapacity")){
+                    SeatingCapacity = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("FlyingRange")){
+                    FlyingRange = Integer.parseInt(entry.getValue().toString());
+                }
+                if (entry.getKey().toString().equalsIgnoreCase("WeightLift")){
+                    WeightLift = Integer.parseInt(entry.getValue().toString());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[ERROR]:");
+        }
+    }
+    public String getAircraftType(){
+        return AircraftType;
+    };
     public String getAircraftName(){
-        return "Boeing 737";
-    };
-    public String getVendorName(){
-        return "Boeing";
-    };
-    public Integer getFuelEndurance(){
-        return 300;
-    };
-    public Integer  getFlyingRange(){
-        return 5000;
-    };
-    public Integer getWeightLift(){
-        return 15000;
-    };
-    public Integer getSeatingCapacity(){
-      return 470;
+        return PlaneName;
     };
     public String getPlaneType(){
-        return "Passenger";
+        return PlaneType;
+    };
+    public String getVendorName(){
+        return VendorName;
+    };
+    public Integer getFuelEndurance(){
+        return FuelEndurance;
+    };
+    public Integer getFlyingRange(){
+        return FlyingRange;
+    };
+    public Integer getWeightLift(){
+        return WeightLift;
+    };
+    public Integer getSeatingCapacity(){
+        return SeatingCapacity;
     };
 }

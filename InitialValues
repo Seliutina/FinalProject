@@ -1,0 +1,91 @@
+[{
+  "vendorName": "Boeing",
+  "planes": [{
+    "planeName": "Boeing 777",
+    "planeType": "TEST",
+    "flyingRange": 10111,
+    "seatingCapacity": 550,
+    "fuelEndurance": 700,
+    "weightLift": 1212111
+  },
+    {
+      "planeName": "Boeing 737",
+      "planeType": "passenger",
+      "flyingRange": 5080,
+      "seatingCapacity": 471,
+      "fuelEndurance": 393,
+      "weightLift": 15003
+    }
+  ],
+  "helicopters":[{
+    "helicopterName": "Bell 47",
+    "weightLift": 2323,
+    "fuelEndurance": 5748,
+    "seatingCapacity": 1111,
+    "lengthMorphingHelicopterRotor": 25,
+    "flyingRange": 35463
+  },
+    {
+      "helicopterName": "Bell AH - Cobra",
+      "weightLift": 23211,
+      "fuelEndurance": 5728,
+      "seatingCapacity": 1888,
+      "lengthMorphingHelicopterRotor": 18,
+      "flyingRange": 354993
+    }
+    ],
+     "aerostats": [{
+      "aerostatName": "07 ATC",
+      "weightLift": 23211,
+      "fuelEndurance": 5728,
+      "seatingCapacity": 1888,
+      "gasCylinderVolume": 101,
+      "flightAltitudes": 3543
+    },
+       {
+         "aerostatName": "08 ATH",
+         "weightLift": 23011,
+         "fuelEndurance": 7828,
+         "seatingCapacity": 2888,
+         "gasCylinderVolume": 199,
+         "flightAltitudes": 8000
+       }
+  ]
+}, {
+  "vendorName": "Sikorsky",
+  "planes": [{
+    "planeName": "Sikorsky S - 44",
+    "planeType": "passenger",
+    "flyingRange": 20991,
+    "seatingCapacity": 530,
+    "fuelEndurance": 800,
+    "weightLift": 188111
+  },
+    {
+      "planeName": "Sikorsky S - 52",
+      "planeType": "passenger",
+      "flyingRange": 2380,
+      "seatingCapacity": 171,
+      "fuelEndurance": 384,
+      "weightLift": 15099
+    }
+  ],
+
+  "helicopters":[{
+    "helicopterName": "Sikorsky R - 6",
+    "weightLift": 2993,
+    "fuelEndurance": 748,
+    "seatingCapacity": 101,
+    "lengthMorphingHelicopterRotor": 21,
+    "flyingRange": 3572
+  },
+    {
+      "helicopterName": "Sikorsky SH - 3",
+      "weightLift": 2300,
+      "fuelEndurance": 28,
+      "seatingCapacity": 18,
+      "lengthMorphingHelicopterRotor": 21,
+      "flyingRange": 10003
+    }
+  ]
+}]
